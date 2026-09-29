@@ -4,6 +4,7 @@ Public web pages for the Forge habit tracker, served by GitHub Pages:
 
 - **Privacy policy:** https://belalhamad.github.io/forge-site/privacy.html
 - **Privacy policy (Arabic):** https://belalhamad.github.io/forge-site/privacy-ar.html
+- **Support:** https://belalhamad.github.io/forge-site/support.html (the App Store Support URL; source `SUPPORT.md` in the app repo)
 
 The Forge app's Settings → Privacy Policy row opens that address, so keep the file name the same.
 
