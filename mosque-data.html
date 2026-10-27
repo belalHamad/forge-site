@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forge Mosque Data</title>
+<meta name="description" content="The OpenStreetMap mosque data built into the Forge app, under the Open Database License.">
+<style>
+  :root { --bg:#ffffff; --text:#1d1d1f; --muted:#6e6e73; --rule:#e5e5ea; --link:#0a66d6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#000000; --text:#f5f5f7; --muted:#a1a1a6; --rule:#2c2c2e; --link:#4aa3ff; }
+  }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font:17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width:680px; margin:0 auto; padding:40px 16px 64px; }
+  h1 { font-size:32px; line-height:1.2; margin:0 0 12px; }
+  h2 { font-size:21px; margin:36px 0 8px; padding-top:20px; border-top:1px solid var(--rule); }
+  p, li { overflow-wrap:anywhere; }
+  p.meta { margin:2px 0; color:var(--muted); font-size:15px; }
+  ul { padding-inline-start:22px; } li { margin:6px 0; }
+  code, pre { font:14px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre { white-space:pre-wrap; background:color-mix(in srgb, var(--text) 6%, transparent); padding:12px; border-radius:10px; }
+  a { color:var(--link); }
+  [lang="ar"] { direction:rtl; }
+</style>
+</head>
+<body>
+<main>
+<h1>Forge Mosque Data</h1>
+<p class="meta"><strong>Updated:</strong> 27 October 2026</p>
+
+<p>Forge's mosque detection includes a built-in map of the world's mosques, so that most checks happen
+on your iPhone and your location isn't sent anywhere. That map is made from
+<strong>OpenStreetMap</strong> data.</p>
+
+<p><strong>© OpenStreetMap contributors.</strong> The data is available under the
+<a href="https://opendatacommons.org/licenses/odbl/1-0/">Open Database License (ODbL) 1.0</a>.
+See <a href="https://www.openstreetmap.org/copyright">openstreetmap.org/copyright</a>.</p>
+
+<h2>The data in the app</h2>
+<p>Forge's file is a derived database of OpenStreetMap and is offered here under the same licence,
+ODbL 1.0:</p>
+<ul>
+<li><a href="data/WorldMosques.bin"><strong>WorldMosques.bin</strong></a> (6.7 MB): 292,415 places of
+worship tagged <code>amenity=place_of_worship</code> + <code>religion=muslim</code> (nodes, ways and
+relations, as points), with one name each. SHA-256
+<code>5289a726bc09bebf084ca37850e2f09fd70f26007a626d1baf2f14fbfffb75f7</code>.</li>
+<li><a href="data/build_mosque_index.py"><strong>build_mosque_index.py</strong></a>: the script that
+builds it, with the file format described at its top.</li>
+</ul>
+
+<h2>How it was made</h2>
+<p>Downloaded from the Overpass API on 26 October 2026 with this query, then packed by the script:</p>
+<pre>[out:csv(::type,::id,::lat,::lon,"name","name:en","name:ar","name:tr";true;"\t")];
+nwr["amenity"="place_of_worship"]["religion"="muslim"];
+out center;</pre>
+<p>It is refreshed with app updates. Missing or wrong mosques can be fixed on OpenStreetMap itself, and
+reach Forge with a later update.</p>
+
+<h2 lang="ar">بالعربية</h2>
+<p lang="ar">تتضمن ميزة اكتشاف المسجد في Forge خريطة مدمجة لمساجد العالم، مصدرها <strong>OpenStreetMap</strong>،
+فتجري معظم عمليات التحقق على جهازك دون إرسال موقعك. © المساهمون في OpenStreetMap، والبيانات متاحة
+بموجب رخصة قاعدة البيانات المفتوحة (ODbL) 1.0، والملف المشتق أعلاه متاح بالرخصة نفسها.</p>
+
+<p><a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a></p>
+</main>
+</body>
+</html>
