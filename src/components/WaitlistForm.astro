@@ -1,0 +1,47 @@
+---
+import { t, type Lang } from '../lib/i18n';
+import site from '../data/site.json';
+interface Props { lang: Lang; source: string; id?: string }
+const { lang, source, id = 'wl' } = Astro.props;
+const s = t(lang).waitlist;
+const action = site.waitlistAction;
+---
+<form class="wl" id={id} method="post" action={action || undefined} data-open={action ? 'yes' : 'no'} novalidate>
+  <div class="wl-row">
+    <label class="sr" for={`${id}-email`}>{s.email}</label>
+    <input id={`${id}-email`} name="fields[email]" type="email" autocomplete="email" inputmode="email" required placeholder={s.email} dir="ltr">
+    <button class="btn btn-ember" type="submit">{s.submit}</button>
+  </div>
+  <label class="wl-check" for={`${id}-group`}><input id={`${id}-group`} name="fields[group]" type="checkbox" value="yes"> {s.group}</label>
+  <input type="hidden" name="fields[language]" value={lang}>
+  <input type="hidden" name="fields[source]" value={source}>
+  <div class="hp" aria-hidden="true"><label for={`${id}-hp`}>Leave empty</label><input id={`${id}-hp`} name="hp" tabindex="-1" autocomplete="off"></div>
+  <p class="wl-note">{s.privacy}</p>
+  <p class="wl-msg" role="status" aria-live="polite"></p>
+</form>
+<style>
+  .wl { display: grid; gap: 12px; max-width: 520px; }
+  .wl-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .wl-row input { flex: 1 1 220px; min-width: 0; min-height: 48px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font: 16px var(--f-body); padding-inline: 20px; }
+  .wl-row input:focus-visible { outline: 3px solid var(--molten); outline-offset: 1px; }
+  .wl-check { display: flex; gap: 10px; align-items: center; color: var(--text-2); font-size: 15px; cursor: pointer; }
+  .wl-check input { width: 20px; height: 20px; accent-color: var(--ember); }
+  .wl-note { font-size: 13px; color: var(--text-2); }
+  .wl-msg { font-size: 15px; color: var(--molten); min-height: 1.4em; }
+  .hp { position: absolute; inset-inline-start: -9999px; }
+</style>
+<script define:vars={{ id, msgs: { ok: s.ok, notOpen: s.notOpen, bad: s.bad } }}>
+  const f = document.getElementById(id);
+  const msg = f.querySelector('.wl-msg');
+  f.addEventListener('submit', async (e) => {
+    const email = f.querySelector('input[type=email]');
+    if (!email.value || !email.checkValidity()) { e.preventDefault(); msg.textContent = msgs.bad; email.focus(); return; }
+    if (f.querySelector('[name=hp]').value) { e.preventDefault(); return; }
+    if (f.dataset.open !== 'yes') { e.preventDefault(); msg.textContent = msgs.notOpen; return; }
+    e.preventDefault();
+    try {
+      await fetch(f.action, { method: 'POST', body: new FormData(f), mode: 'no-cors' });
+      msg.textContent = msgs.ok; f.reset();
+    } catch { f.submit(); }
+  });
+</script>

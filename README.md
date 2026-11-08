@@ -1,22 +1,21 @@
 # forge-site
 
-Public web pages for the Forge habit tracker, served by GitHub Pages on **forgeyourhabit.com**
-(`CNAME`; DNS at Cloudflare, "DNS only"). Old `belalhamad.github.io/forge-site/…` links redirect
-to the same page on the domain.
+The website for Forge on **forgeyourhabit.com**, built with Astro (static) and deployed to GitHub Pages by
+GitHub Actions (`.github/workflows/deploy.yml`, plus a daily rebuild for countdowns and seasons).
 
-- **Home:** https://forgeyourhabit.com/ (`index.html`; the App Store Marketing URL)
-- **Privacy policy:** https://forgeyourhabit.com/privacy.html (Arabic: `privacy-ar.html`)
-- **Support:** https://forgeyourhabit.com/support.html (Arabic: `support-ar.html`; the App Store Support URL)
-- **Mosque data (ODbL):** https://forgeyourhabit.com/mosque-data.html (the OpenStreetMap-derived
-  `data/WorldMosques.bin` and `data/build_mosque_index.py`, offered under ODbL 1.0; source in the app repo)
-- **Email:** support@forgeyourhabit.com (forwarded by Cloudflare)
+- EN at `/`, Arabic at `/ar/` (right-to-left), Turkish at `/tr/`. Strings: `src/i18n/{en,ar,tr}.json`
+  (the build fails if AR or TR misses a key).
+- `/android/`: the Android waitlist (switches to the Play button when `androidState` is `live`).
+- `/join/?g=<id>&s=<c|f>&n=<name>&l=<en|ar|tr>`: the group invite page. Old `/join/<token>` paths are forwarded by
+  `404.html`. `/.well-known/apple-app-site-association` is generated from `src/data/site.json`
+  (`assetlinks.json` too, once the Android signing fingerprint is set).
+- Prices come only from `src/data/pricing.json`; store states and links from `src/data/site.json`.
+- The legacy pages keep their URLs: `support.html`, `privacy.html` (+ `-ar`), `mosque-data.html`, `data/`
+  (now under `public/`). Regenerate the privacy and support pages from the app repo as before.
 
-The app links to these addresses (`AppLinks` in the app repo), so keep the file names the same.
+## One-time setup (Bilal)
+1. Repo Settings → Pages → Source: **GitHub Actions** (instead of "Deploy from a branch").
+2. MailerLite: create the form and put its POST URL in `site.json` → `waitlistAction`.
 
-## Updating the policy and the support page
-
-The sources live in the (private) Forge app repo: `PRIVACY_POLICY.md` / `PRIVACY_POLICY.ar.md` and
-`SUPPORT.md` / `SUPPORT.ar.md`. Update each language pair together. Change them there, regenerate the
-pages with `scripts/build_privacy_page.py` (instructions at the top of that script), update the
-policy's effective date, and commit the new HTML here. Don't edit the generated pages by hand; the next
-regeneration would overwrite the change.
+## Local
+`npm ci && npm run build` → `dist/`. `npm run dev` for a live preview.

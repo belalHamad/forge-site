@@ -1,0 +1,10 @@
+import en from '../i18n/en.json';
+import ar from '../i18n/ar.json';
+import tr from '../i18n/tr.json';
+export type Lang = 'en' | 'ar' | 'tr';
+export const dict = { en, ar, tr } as const;
+export const t = (lang: Lang) => dict[lang];
+export const dir = (lang: Lang) => (lang === 'ar' ? 'rtl' : 'ltr');
+export const prefix = (lang: Lang) => (lang === 'en' ? '' : `/${lang}`);
+export const langNames: Record<Lang, string> = { en: 'English', ar: 'العربية', tr: 'Türkçe' };
+export const short: Record<Lang, string> = { en: 'EN', ar: 'ع', tr: 'TR' };

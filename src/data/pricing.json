@@ -1,0 +1,8 @@
+{
+  "currency": "USD",
+  "foundersEnd": "2027-03-12",
+  "founders": { "yearly": "24.99", "lifetime": "59.99", "monthly": "5.99" },
+  "after": { "yearly": "34.99", "lifetime": "79.99", "monthly": "5.99" },
+  "trialDays": 7,
+  "freeHabits": 5
+}

@@ -1,0 +1,15 @@
+{
+  "iosState": "waitlist",
+  "androidState": "waitlist",
+  "appStoreId": "",
+  "appStoreUrl": "",
+  "playUrl": "",
+  "teamId": "53T98NLS49",
+  "bundleId": "com.bilalhammad.forge.native",
+  "androidPackage": "com.bilalhammad.forge",
+  "androidSha256": [],
+  "waitlistAction": "",
+  "supportEmail": "support@forgeyourhabit.com",
+  "ramadanStart": "2027-02-08",
+  "launchDate": "2027-01-11"
+}

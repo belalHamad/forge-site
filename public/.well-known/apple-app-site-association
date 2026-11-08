@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "53T98NLS49.com.bilalhammad.forge.native"
+        ],
+        "components": [
+          {
+            "/": "/join/*",
+            "comment": "Group invites"
+          }
+        ]
+      }
+    ]
+  }
+}

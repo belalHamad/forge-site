@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { dict } from '../lib/i18n';
+const s = dict.en;
+---
+<Base lang="en" title="Forge" description={s.meta.description} path="/" noindex minimal>
+  <script is:inline>
+    // Old-style invite links (/join/<token>) go to the invite page with the token as ?g=.
+    (function () {
+      var m = location.pathname.match(/^\/join\/([A-Za-z0-9_-]{6,64})\/?$/);
+      if (m) location.replace('/join/?g=' + m[1] + (location.search ? '&' + location.search.slice(1) : ''));
+    })();
+  </script>
+  <section><div class="wrap" style="display:grid;gap:18px;max-width:640px">
+    <h1 style="font-size:clamp(36px,6vw,60px)">This page isn't here.</h1>
+    <p style="color:var(--text-2)">The link may be old. Start from the home page.</p>
+    <p><a class="btn btn-ember" href="/">Forge home</a></p>
+  </div></section>
+</Base>

@@ -1,0 +1,119 @@
+/* Forge Night (dark, default) and Daylight (light). Layout: one centred column of 1120px with full-bleed bands;
+   hero is split text | phone on wide screens, stacked on phones. */
+:root {
+  --bg: #0E0B09;
+  --surface: #1A1512;
+  --surface-2: #241C17;
+  --line: #3A2E26;
+  --text: #F4EDE6;
+  --text-2: #B9ACA2;
+  --ember: #FF6A1F;
+  --ember-text: #FF8A4C;
+  --ember-glow: #FF9A3D;
+  --molten: #FFC46B;
+  --iron: #5A4E46;
+  --on-ember: #0E0B09;
+  --fajr: #F08AA0; --dhuhr: #F2C14E; --asr: #F59E42; --maghrib: #F2735A; --isha: #7C83F0;
+  --c-quran: #C9B458; --c-quit: #E0565B; --c-learn: #F59E42; --c-body: #3FBF8F; --c-water: #49A8F2; --c-mind: #A98BF2;
+  --heat: radial-gradient(120% 80% at 50% 115%, #FF6A1F 0%, #8A2A0A 32%, transparent 68%);
+  --f-display: "Bricolage Grotesque Variable", "Alexandria Variable", ui-sans-serif, system-ui, sans-serif;
+  --f-ar-display: "Alexandria Variable", "Readex Pro Variable", "Geeza Pro", "Segoe UI", sans-serif;
+  --f-body: "Readex Pro Variable", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --t-micro: 140ms; --t-ui: 280ms; --t-scene: 720ms;
+  --ease-strike: cubic-bezier(.2,.9,.1,1); --ease-cool: cubic-bezier(.4,0,.2,1);
+  --radius: 22px;
+  --wrap: 1120px;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #FBF7F2; --surface: #FFFFFF; --surface-2: #F3ECE4; --line: #E6DCD1; --text: #1C1410; --text-2: #5E5048;
+    --ember: #E2580E; --ember-text: #B8410A; --ember-glow: #EA580C; --molten: #B45309; --iron: #CDBFB3; --on-ember: #FFFFFF;
+    --fajr: #D9607A; --dhuhr: #C8961C; --asr: #D97A1E; --maghrib: #D5543B; --isha: #5A60D6;
+    --c-quran: #9C8A2E; --c-quit: #C93F45; --c-learn: #D97A1E; --c-body: #1F9A6C; --c-water: #2384D0; --c-mind: #7B5BD6;
+    --heat: radial-gradient(120% 80% at 50% 115%, #F7B9A2 0%, #FBE3C3 34%, transparent 70%);
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #FBF7F2; --surface: #FFFFFF; --surface-2: #F3ECE4; --line: #E6DCD1; --text: #1C1410; --text-2: #5E5048;
+  --ember: #E2580E; --ember-text: #B8410A; --ember-glow: #EA580C; --molten: #B45309; --iron: #CDBFB3; --on-ember: #FFFFFF;
+  --fajr: #D9607A; --dhuhr: #C8961C; --asr: #D97A1E; --maghrib: #D5543B; --isha: #5A60D6;
+  --c-quran: #9C8A2E; --c-quit: #C93F45; --c-learn: #D97A1E; --c-body: #1F9A6C; --c-water: #2384D0; --c-mind: #7B5BD6;
+  --heat: radial-gradient(120% 80% at 50% 115%, #F7B9A2 0%, #FBE3C3 34%, transparent 70%);
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+:root[data-motion="off"] { scroll-behavior: auto; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 17px/1.6 var(--f-body); overflow-x: hidden;
+}
+:lang(ar) body, body:lang(ar) { font-size: 18px; line-height: 1.8; }
+img, svg, canvas { max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--molten); outline-offset: 2px; border-radius: 6px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.05; letter-spacing: -0.02em; }
+:lang(ar) h1, :lang(ar) h2, :lang(ar) h3 { font-family: var(--f-ar-display); letter-spacing: 0; line-height: 1.35; }
+p { margin: 0; }
+.wrap { max-width: var(--wrap); margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--ember-text); font-weight: 600; }
+:lang(ar) .eyebrow { letter-spacing: 0; text-transform: none; font-size: 15px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; inset-inline-start: 12px; top: -60px; background: var(--ember); color: var(--on-ember); padding: 10px 14px; border-radius: 10px; z-index: 50; }
+.skip:focus { top: calc(12px + env(safe-area-inset-top, 0px)); }
+
+/* Faith / General view: content marked for one view is removed in the other. */
+:root[data-view="general"] [data-only="faith"] { display: none !important; }
+:root:not([data-view="general"]) [data-only="general"] { display: none !important; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font: 600 16px/1 var(--f-body); text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: box-shadow var(--t-micro) var(--ease-cool), transform var(--t-micro) var(--ease-cool), background var(--t-micro); }
+.btn:active { transform: scale(.98); }
+.btn-ember { background: var(--ember); color: var(--on-ember); box-shadow: 0 0 0 0 color-mix(in oklab, var(--ember) 50%, transparent); }
+.btn-ember:hover { box-shadow: 0 0 24px 2px color-mix(in oklab, var(--ember-glow) 55%, transparent); }
+.btn-ghost { background: transparent; color: var(--text); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--ember); }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--text-2); }
+
+/* Header */
+.site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); background: color-mix(in oklab, var(--bg) 78%, transparent); border-bottom: 1px solid color-mix(in oklab, var(--line) 60%, transparent); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--bg); }
+.site-head .wrap { display: flex; align-items: center; gap: 18px; min-height: 64px; }
+.logo { display: inline-flex; align-items: center; gap: 10px; font: 700 21px/1 var(--f-display); text-decoration: none; letter-spacing: -0.01em; }
+.logo-mark { width: 26px; height: 26px; }
+.site-nav { display: flex; gap: 22px; margin-inline-start: auto; font-size: 15px; }
+.site-nav a { text-decoration: none; color: var(--text-2); }
+.site-nav a:hover { color: var(--text); }
+.head-cta { min-height: 40px; padding: 0 16px; font-size: 15px; }
+.lang { display: flex; gap: 4px; font-size: 14px; }
+.lang a { text-decoration: none; color: var(--text-2); padding: 6px 8px; border-radius: 8px; }
+.lang a[aria-current="true"] { color: var(--text); background: var(--surface-2); }
+@media (max-width: 860px) { .site-nav { display: none; } .lang { margin-inline-start: auto; } }
+@media (max-width: 420px) { .head-cta { display: none; } }
+
+/* Sections */
+section { padding-block: clamp(72px, 10vw, 128px); }
+.section-title { font-size: clamp(32px, 5vw, 56px); max-width: 18ch; }
+.section-lead { color: var(--text-2); max-width: 60ch; margin-top: 16px; font-size: 19px; }
+
+/* Footer */
+.site-foot { border-top: 1px solid var(--line); padding-block: 40px 56px; color: var(--text-2); font-size: 15px; }
+.site-foot .wrap { display: grid; gap: 24px; grid-template-columns: 1fr auto; align-items: start; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.foot-links a { text-decoration: none; }
+.foot-links a:hover { color: var(--text); }
+.foot-prefs { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; }
+.seg button { font: inherit; font-size: 13px; color: var(--text-2); background: none; border: 0; padding: 6px 12px; border-radius: 999px; cursor: pointer; min-height: 32px; }
+.seg button[aria-pressed="true"] { background: var(--surface-2); color: var(--text); }
+@media (max-width: 720px) { .site-foot .wrap { grid-template-columns: 1fr; } }
+
+/* Simple reveal, visible at rest; animates only when supported and motion is on. */
+@supports (animation-timeline: view()) {
+  :root:not([data-motion="off"]) .reveal { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+  @keyframes reveal { from { opacity: .35; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+}
+@media (prefers-reduced-motion: reduce) { :root:not([data-motion="on"]) .reveal { animation: none !important; } }

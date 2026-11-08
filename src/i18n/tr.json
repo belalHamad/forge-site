@@ -1,0 +1,306 @@
+{
+  "meta": {
+    "title": "Forge: Alışkanlığını kur, gerisini bırak",
+    "description": "Namaz, Kur'an, ekran süresi, bırakmak istediklerin ve aradaki her alışkanlık; tek uygulamada, sevdiklerinle. iPhone'da; Android yakında.",
+    "androidTitle": "Android için Forge",
+    "androidDescription": "Forge Android'e geliyor. E-postanı bırak, hazır olduğu gün sana bir kez yazalım.",
+    "joinTitle": "Forge'daki grubuma katıl"
+  },
+  "nav": {
+    "features": "Özellikler",
+    "ramadan": "Ramazan",
+    "pricing": "Fiyatlar",
+    "android": "Android",
+    "get": "Forge'u edin",
+    "skip": "İçeriğe geç",
+    "language": "Dil"
+  },
+  "hero": {
+    "eyebrow": "Önce Müslümanlar için, herkes için bir alışkanlık uygulaması",
+    "h1": [
+      "Alışkanlığını",
+      "kur.",
+      "Gerisini",
+      "bırak."
+    ],
+    "subFaith": "Namaz, Kur'an, ekran süresi, bırakmak istediklerin ve aradaki her alışkanlık. Tek uygulama, sevdiklerinle.",
+    "subGeneral": "Alışkanlıklar, ekran süresi, bırakmak istediklerin ve ilerlemen. Tek uygulama, sevdiklerinle.",
+    "ctaIos": "Çıkınca haber ver",
+    "ctaIosLive": "App Store'dan indir",
+    "ctaIosPreorder": "App Store'da ön sipariş ver",
+    "ctaAndroid": "Android: bana haber ver",
+    "founders": "12 Mart'a kadar kurucu fiyatı",
+    "perYear": "yıllık",
+    "launch": "11 Ocak'tan itibaren App Store'da",
+    "strip": "Otuz gün, her gün bir kıvılcım"
+  },
+  "switch": {
+    "label": "Forge'u göster:",
+    "faith": "İnanç",
+    "general": "Genel",
+    "faithNote": "İnanç görünümü namaz vakitlerini, Kur'an'ı ve Ramazan'ı gösterir.",
+    "generalNote": "Genel görünüm bunların hiçbirini göstermez. Uygulamada istediğin zaman değiştir; hiçbir şey silinmez."
+  },
+  "phone": {
+    "today": "Bugün",
+    "faith": [
+      {
+        "t": "Sabah",
+        "s": "Vaktinde kılındı",
+        "state": "done",
+        "c": "fajr"
+      },
+      {
+        "t": "Öğle",
+        "s": "Vaktinde kılındı",
+        "state": "done",
+        "c": "dhuhr"
+      },
+      {
+        "t": "İkindi",
+        "s": "Sıradaki · 15:12",
+        "state": "next",
+        "c": "asr"
+      },
+      {
+        "t": "Kur'an Okuma",
+        "s": "Hatim · bugün 20 sayfa · 30 cüzün 12.'si",
+        "state": "half",
+        "c": "quran"
+      },
+      {
+        "t": "Sigarayı Bırak",
+        "s": "12 gündür dumansız · 180 sigara içilmedi",
+        "state": "done",
+        "c": "quit"
+      }
+    ],
+    "general": [
+      {
+        "t": "Kitap Oku",
+        "s": "20 dk · zamanlayıcı",
+        "state": "done",
+        "c": "learn"
+      },
+      {
+        "t": "Günlük Adım",
+        "s": "7.000'de 6.240 · Apple Sağlık",
+        "state": "half",
+        "c": "body"
+      },
+      {
+        "t": "Su İç",
+        "s": "8 bardaktan 5'i",
+        "state": "half",
+        "c": "water"
+      },
+      {
+        "t": "Günlük",
+        "s": "Bu akşam bir satır",
+        "state": "next",
+        "c": "mind"
+      },
+      {
+        "t": "Sigarayı Bırak",
+        "s": "12 gündür dumansız · 180 sigara içilmedi",
+        "state": "done",
+        "c": "quit"
+      }
+    ],
+    "alt": "Forge Bugün ekranının bir çizimi",
+    "hijri": "2 Şaban 1448"
+  },
+  "season": {
+    "faithTitle": "Ramazan'la bırak.",
+    "faithText": "Şaban boyunca azalt, Ramazan'ın ilk günü bırak. Forge sınırını her hafta biraz düşürür ve cebinde kalan parayı sayar.",
+    "generalTitle": "Bir planla bırak.",
+    "generalText": "Önce azalt, sonra seçtiğin gün bırak. Forge günleri ve cebinde kalan parayı sayar; bir kayma ilerlemeni silmez.",
+    "daysTo": "gün kaldı Ramazan'a",
+    "moon": "Hilal gözlemine göre ±1 gün",
+    "eyebrow": "Şaban → Ramazan"
+  },
+  "pillars": {
+    "title": "Tek uygulamada beş şey",
+    "items": [
+      {
+        "k": "habits",
+        "name": "Alışkanlık kur ve bırak",
+        "line": "Kurduğun, bıraktığın ve bir kez yapacağın her şey için tek liste.",
+        "b": [
+          "Kaydetmek için tek dokunuş, süreli alışkanlıklar için zamanlayıcı",
+          "Bırakma araçları: istek anı, geçmişini silmeyen kaymalar, biriken para",
+          "Hazır alışkanlıklar, saniyeler içinde"
+        ]
+      },
+      {
+        "k": "screen",
+        "name": "Ekran süreni yönet",
+        "lineFaith": "Uygulamalar önemli anlarda susar; namaz vakitlerinde de.",
+        "lineGeneral": "Uygulamalar önemli anlarda susar: yatarken, odaklanırken.",
+        "b": [
+          "Haftanı öğrenip sınırını düşüren bir plan",
+          "Günün alışkanlıkları bitene kadar uygulamaları kilitle",
+          "Her şey iPhone'unda kalır"
+        ],
+        "chip": "iPhone"
+      },
+      {
+        "k": "worship",
+        "name": "İbadetlerin tek yerde",
+        "faithOnly": true,
+        "line": "Günün, namazlarının etrafında.",
+        "b": [
+          "Namazlar gerçek vakitlerinde, her birinin ardından tesbihat",
+          "Zikirmatik, Kur'an sayfaları ve kişisel hatim",
+          "Her gün sabah vaktini takip eden bir alarm"
+        ]
+      },
+      {
+        "k": "mindful",
+        "name": "Sakin anlar",
+        "generalOnly": true,
+        "line": "Nefes almak için bir dakika, yazmak için bir satır.",
+        "b": [
+          "Rehberli nefes egzersizi",
+          "Telefonunda kalan özel bir günlük",
+          "İstersen akşamları nazik bir hâl hatır sorma"
+        ]
+      },
+      {
+        "k": "together",
+        "name": "Aile ve arkadaşlarla",
+        "line": "Bir takım, yarış değil.",
+        "bFaith": [
+          "Aile hatmi: herkes bir cüz alır",
+          "Tek bir sayıya doğru toplu zikir",
+          "Bugün kimin yaptığını gör. Sohbet yok, akış yok"
+        ],
+        "bGeneral": [
+          "Seçtiğin kişilerle ortak alışkanlıklar",
+          "Tutulan günlerle sayılan Her Gün meydan okumaları",
+          "Bugün kimin yaptığını gör. Sohbet yok, akış yok"
+        ]
+      },
+      {
+        "k": "motivation",
+        "name": "Affeden motivasyon",
+        "line": "Esneyen seriler, seni kırmayan.",
+        "b": [
+          "Mazeretli ve duraklatılmış günler seriyi bozmaz",
+          "Adın kazınmış 3B rozetler",
+          "Haftalık ilerleme; kaçırdığın gün için asla kırmızı yok"
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Sadece senin",
+    "tiles": [
+      {
+        "h": "Başlamak için hesap yok",
+        "p": "Uygulamayı aç ve başla. Kayıt yok, e-posta yok."
+      },
+      {
+        "h": "iPhone'unda kalır",
+        "p": "Alışkanlıkların telefonunda ve kendi özel iCloud'unda."
+      },
+      {
+        "h": "Ekran Süresi cihazdan çıkmaz",
+        "p": "Neyi ne kadar kullandığın cihazda kalır. Her zaman."
+      }
+    ],
+    "line": "Reklam yok. Takip yok. Hesap gerekmez."
+  },
+  "works": {
+    "title": "Birlikte çalışır",
+    "items": [
+      "Apple Sağlık",
+      "Apple Watch",
+      "Araçlar ve Kilit Ekranı",
+      "Canlı Etkinlikler"
+    ]
+  },
+  "pricing": {
+    "title": "Ücretsiz başla. Her şey için Premium.",
+    "free": "Her zaman ücretsiz",
+    "freeItems": [
+      "5 alışkanlık (beş vakit namaz bir sayılır)",
+      "İbadet temelleri, her zaman",
+      "Bir Ekran Süresi kuralı",
+      "Herhangi bir gruba katılmak"
+    ],
+    "premium": "Forge Premium",
+    "premiumItems": [
+      "Sınırsız alışkanlık ve hedef",
+      "Araçlar, Watch ve Kilit Ekranı zamanlayıcısı",
+      "Grup ve meydan okuma oluşturma",
+      "Aylık ve yıllık ilerleme"
+    ],
+    "yearly": "Yıllık",
+    "lifetime": "Ömür boyu",
+    "monthly": "Aylık",
+    "trial": "Yıllık planda 7 gün ücretsiz deneme",
+    "local": "Fiyatlar mağazada yerel para biriminle.",
+    "foundersNote": "Kurucu fiyatları 12 Mart 2027'ye kadar. Aboneler fiyatlarını korur."
+  },
+  "made": {
+    "title": "Tek bir kişi yapıyor",
+    "p": "Forge'u tek bir kurucu, Belal Hammad, Türkçe, Arapça ve İngilizce olarak yapıyor. Yatırımcı yok, reklam yok. Sadece saklamaya değer olması gereken bir uygulama."
+  },
+  "final": {
+    "title": "Bu akşam tek bir alışkanlıkla başla.",
+    "sub": "E-postanı bırak, çıkış günü sana bir kez yazalım."
+  },
+  "waitlist": {
+    "email": "E-posta",
+    "country": "Ülke",
+    "lang": "Dil",
+    "group": "Bir aile ya da arkadaş grubuna katılmak istiyorum",
+    "submit": "Haber ver",
+    "privacy": "Çıkış günü tek bir e-posta. Başka bir şey yok. Tek dokunuşla ayrıl.",
+    "ok": "Onaylamak için gelen kutuna bak.",
+    "notOpen": "Kayıt bu hafta açılıyor. O zamana kadar support@forgeyourhabit.com adresine yaz, seni ekleyelim.",
+    "bad": "ad@ornek.com gibi bir e-posta adresi yaz."
+  },
+  "android": {
+    "h1": "Forge Android'e geliyor.",
+    "p": "Önce alışkanlıklar, namaz, Ramazan'la Bırak, ilerleme ve gruplar. Ekran Süresi araçları şimdilik iPhone'da.",
+    "chips": [
+      "Alışkanlık ve bırakma",
+      "Namaz ve tesbihat",
+      "Kur'an ve Ramazan",
+      "İlerleme",
+      "Aile grupları"
+    ],
+    "later": "Android'e daha sonra: araçlar, sabah alarmı, günlük ve Health Connect."
+  },
+  "join": {
+    "invited": "Davet edildin:",
+    "aGroup": "bir grup",
+    "on": "· Forge",
+    "step1": "Forge'u edin",
+    "step2": "Daveti aç",
+    "icloud": "Gruplar iCloud kullanır; iCloud'a giriş yapmış olman gerekir.",
+    "androidTitle": "Forge grupları Android'e geliyor.",
+    "androidP": "Seni davet edene Android kullandığını söyle. E-postanı bırak, katılabildiğin gün sana yazalım.",
+    "copy": "Davet edene bir mesaj kopyala",
+    "copied": "Kopyalandı. Sohbete yapıştır.",
+    "message": "Android kullanıyorum, Forge grubumuza henüz katılamıyorum. Katılabildiğimde haber almak için kaydoldum.",
+    "desktop": "Bu bağlantıyı telefonunda aç.",
+    "bad": "Bu davet bağlantısı eksik. Yeni bir bağlantı iste.",
+    "soon": "Forge 11 Ocak'tan itibaren App Store'da."
+  },
+  "footer": {
+    "support": "Destek",
+    "privacy": "Gizlilik",
+    "mosque": "Cami verisi",
+    "theme": "Tema",
+    "themeSystem": "Sistem",
+    "themeLight": "Açık",
+    "themeDark": "Koyu",
+    "motion": "Hareket",
+    "motionOn": "Açık",
+    "motionOff": "Azaltılmış",
+    "rights": "© 2026 Belal Hammad"
+  }
+}

@@ -1,0 +1,114 @@
+---
+import Base from '../../layouts/Base.astro';
+import WaitlistForm from '../../components/WaitlistForm.astro';
+import { dict } from '../../lib/i18n';
+import site from '../../data/site.json';
+const s = dict.en;
+const strings = { en: dict.en.join, ar: dict.ar.join, tr: dict.tr.join };
+const appStore = site.iosState === 'waitlist' ? '' : site.appStoreUrl;
+const play = site.androidState === 'live' ? site.playUrl : '';
+---
+<Base lang="en" title={s.meta.joinTitle} description={s.meta.joinTitle} path="/join/" noindex minimal>
+  <meta slot="head" name="referrer" content="no-referrer">
+  {site.appStoreId && <meta slot="head" name="apple-itunes-app" content={`app-id=${site.appStoreId}`}>}
+  <section class="join">
+    <div class="wrap join-card">
+      <div class="glow" aria-hidden="true"></div>
+      <div id="j-ok" hidden>
+        <p class="eyebrow" data-k="invited">{s.join.invited}</p>
+        <h1><span id="j-name">{s.join.aGroup}</span> <span class="on" data-k="on">{s.join.on}</span></h1>
+        <div id="j-ios" class="steps" hidden>
+          <a class="step btn btn-ember" id="j-get" href={appStore || '#j-notify'}><b>1</b> <span data-k="step1">{s.join.step1}</span></a>
+          <a class="step btn btn-ghost" id="j-open" href="#"><b>2</b> <span data-k="step2">{s.join.step2}</span></a>
+          <p class="note" id="j-icloud" data-k="icloud">{s.join.icloud}</p>
+          {!appStore && <p class="note" data-k="soon">{s.join.soon}</p>}
+        </div>
+        <div id="j-android" hidden>
+          {play ? (
+            <div class="steps">
+              <a class="step btn btn-ember" href={play}><b>1</b> <span data-k="step1">{s.join.step1}</span></a>
+              <a class="step btn btn-ghost" id="j-open-a" href="#"><b>2</b> <span data-k="step2">{s.join.step2}</span></a>
+            </div>
+          ) : (
+            <div class="steps">
+              <h2 data-k="androidTitle">{s.join.androidTitle}</h2>
+              <p data-k="androidP">{s.join.androidP}</p>
+              <button class="btn btn-ghost" type="button" id="j-copy"><span data-k="copy">{s.join.copy}</span></button>
+              <p class="note" id="j-copied" role="status" aria-live="polite"></p>
+            </div>
+          )}
+        </div>
+        <div id="j-desk" hidden>
+          <p class="lead" data-k="desktop">{s.join.desktop}</p>
+          <p class="url" id="j-url" dir="ltr"></p>
+        </div>
+      </div>
+      <div id="j-bad" hidden>
+        <h1 data-k="bad">{s.join.bad}</h1>
+      </div>
+      <div id="j-notify" class="notify" hidden><WaitlistForm lang="en" source="join" id="wl-join" /></div>
+    </div>
+  </section>
+</Base>
+<style>
+  .join { overflow: hidden; min-height: 70vh; display: grid; align-items: center; }
+  .join-card { position: relative; max-width: 640px; display: grid; gap: 22px; }
+  .glow { position: absolute; inset: -40px -20px auto; height: 260px; background: var(--heat); opacity: .8; z-index: -1; filter: blur(10px); }
+  :root:not([data-motion="off"]) .glow { animation: breathe 5s var(--ease-cool) infinite alternate; }
+  @keyframes breathe { to { opacity: .45; } }
+  .join h1 { font-size: clamp(34px, 6vw, 56px); }
+  .join h1 .on { color: var(--text-2); font-weight: 500; }
+  #j-name { color: var(--ember-text); }
+  .join h2 { font-size: 26px; }
+  .steps { display: grid; gap: 12px; margin-top: 18px; justify-items: start; }
+  .step b { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: color-mix(in oklab, var(--on-ember) 20%, transparent); font-size: 13px; }
+  .btn-ghost.step b { background: var(--surface-2); }
+  .note { font-size: 14px; color: var(--text-2); }
+  .url { font-size: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; word-break: break-all; user-select: all; }
+  .lead { font-size: 19px; color: var(--text-2); }
+</style>
+<script define:vars={{ strings }}>
+  const q = new URLSearchParams(location.search);
+  const ua = navigator.userAgent;
+  const nav = (navigator.language || 'en').slice(0, 2);
+  const lang = ['en', 'ar', 'tr'].includes(q.get('l')) ? q.get('l') : (['ar', 'tr'].includes(nav) ? nav : 'en');
+  const S = strings[lang];
+  const root = document.documentElement;
+  root.lang = lang; root.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.querySelectorAll('[data-k]').forEach((el) => { const k = el.getAttribute('data-k'); if (S[k]) el.textContent = S[k]; });
+  const g = (q.get('g') || '').trim();
+  const kind = q.get('s') === 'f' ? 'f' : 'c';
+  const valid = /^[A-Za-z0-9_-]{6,64}$/.test(g);
+  const show = (id) => { document.getElementById(id).hidden = false; };
+  if (!valid) { show('j-bad'); show('j-notify'); }
+  else {
+    show('j-ok');
+    const n = (q.get('n') || '').trim().slice(0, 30);
+    document.getElementById('j-name').textContent = n ? '“' + n + '”' : S.aGroup;
+    const ios = /iPhone|iPad|iPod/.test(ua) || (ua.includes('Macintosh') && navigator.maxTouchPoints > 1);
+    const android = /Android/.test(ua);
+    const invite = kind === 'c' ? 'https://www.icloud.com/share/' + encodeURIComponent(g) : 'forge://join?g=' + encodeURIComponent(g);
+    if (ios) {
+      show('j-ios');
+      document.getElementById('j-open').href = invite;
+      if (kind === 'f') document.getElementById('j-icloud').hidden = true;
+      if (document.getElementById('j-get').getAttribute('href') === '#j-notify') show('j-notify');
+    } else if (android) {
+      show('j-android');
+      const oa = document.getElementById('j-open-a');
+      if (oa) oa.href = 'forge://join?g=' + encodeURIComponent(g);
+      const c = document.getElementById('j-copy');
+      if (c) {
+        show('j-notify');
+        c.addEventListener('click', async () => {
+          const out = document.getElementById('j-copied');
+          try { await navigator.clipboard.writeText(S.message); out.textContent = S.copied; }
+          catch { out.textContent = S.message; }
+        });
+      }
+    } else {
+      show('j-desk');
+      document.getElementById('j-url').textContent = location.href;
+    }
+  }
+</script>

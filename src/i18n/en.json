@@ -1,0 +1,308 @@
+{
+  "meta": {
+    "title": "Forge: Build & Break Habits",
+    "description": "Prayers, Quran, screen time, quitting and every habit in between, in one app, with the people you love. For iPhone; Android is coming.",
+    "androidTitle": "Forge for Android",
+    "androidDescription": "Forge for Android is coming. Leave your email and we'll write once, on the day it's ready.",
+    "joinTitle": "Join my group on Forge"
+  },
+  "nav": {
+    "features": "Features",
+    "ramadan": "Ramadan",
+    "pricing": "Pricing",
+    "android": "Android",
+    "get": "Get Forge",
+    "skip": "Skip to content",
+    "language": "Language"
+  },
+  "hero": {
+    "eyebrow": "A habit app, Muslim-first, for everyone",
+    "h1": [
+      "Build",
+      "the",
+      "habits.",
+      "Break",
+      "the",
+      "rest."
+    ],
+    "subFaith": "Prayers, Quran, screen time, quitting, and every habit in between. One app, with the people you love.",
+    "subGeneral": "Habits, screen time, quitting and progress. One app, with the people you love.",
+    "ctaIos": "Get notified at launch",
+    "ctaIosLive": "Download on the App Store",
+    "ctaIosPreorder": "Pre-order on the App Store",
+    "ctaAndroid": "Android: tell me when",
+    "founders": "Founders price until 12 March",
+    "perYear": "a year",
+    "launch": "On the App Store from 11 January",
+    "strip": "Thirty days, one spark at a time"
+  },
+  "switch": {
+    "label": "Show Forge as",
+    "faith": "Faith",
+    "general": "General",
+    "faithNote": "Faith view shows prayer times, Quran and Ramadan.",
+    "generalNote": "General view shows none of it. Switch any time in the app; nothing is deleted."
+  },
+  "phone": {
+    "today": "Today",
+    "faith": [
+      {
+        "t": "Fajr",
+        "s": "Prayed on time",
+        "state": "done",
+        "c": "fajr"
+      },
+      {
+        "t": "Dhuhr",
+        "s": "Prayed on time",
+        "state": "done",
+        "c": "dhuhr"
+      },
+      {
+        "t": "Asr",
+        "s": "Next · 15:12",
+        "state": "next",
+        "c": "asr"
+      },
+      {
+        "t": "Quran Reading",
+        "s": "Khatma · 20 pages today · Juz 12 of 30",
+        "state": "half",
+        "c": "quran"
+      },
+      {
+        "t": "Quit Smoking",
+        "s": "12 days smoke-free · 180 not smoked",
+        "state": "done",
+        "c": "quit"
+      }
+    ],
+    "general": [
+      {
+        "t": "Read a Book",
+        "s": "20 min · timer",
+        "state": "done",
+        "c": "learn"
+      },
+      {
+        "t": "Daily Steps",
+        "s": "6,240 of 7,000 · Apple Health",
+        "state": "half",
+        "c": "body"
+      },
+      {
+        "t": "Drink Water",
+        "s": "5 of 8 glasses",
+        "state": "half",
+        "c": "water"
+      },
+      {
+        "t": "Journal",
+        "s": "One line tonight",
+        "state": "next",
+        "c": "mind"
+      },
+      {
+        "t": "Quit Smoking",
+        "s": "12 days smoke-free · 180 not smoked",
+        "state": "done",
+        "c": "quit"
+      }
+    ],
+    "alt": "An illustration of the Forge Today screen",
+    "hijri": "2 Sha'ban 1448"
+  },
+  "season": {
+    "faithTitle": "Quit with Ramadan.",
+    "faithText": "Cut down through Sha'ban. Quit on the first day of Ramadan. Forge lowers your limit a little each week and counts the money you keep.",
+    "generalTitle": "Quit with a plan.",
+    "generalText": "Cut down first, then stop on a date you choose. Forge counts the days and the money you keep, and a slip never wipes your progress.",
+    "daysTo": "days to Ramadan",
+    "moon": "±1 day by moon sighting",
+    "eyebrow": "Sha'ban → Ramadan"
+  },
+  "pillars": {
+    "title": "Five things, in one app",
+    "items": [
+      {
+        "k": "habits",
+        "name": "Build & break habits",
+        "line": "One list for what you build, what you break and what you finish once.",
+        "b": [
+          "One tap to log, a timer for time habits",
+          "Quit tools: cravings, slips that keep your history, money saved",
+          "Ready-made habits, added in seconds"
+        ]
+      },
+      {
+        "k": "screen",
+        "name": "Control screen time",
+        "lineFaith": "Apps go quiet when it matters, including at prayer times.",
+        "lineGeneral": "Apps go quiet when it matters: at bedtime, while you focus.",
+        "b": [
+          "A plan that learns your week, then lowers your limit",
+          "Block apps until today's habits are done",
+          "Everything stays on your iPhone"
+        ],
+        "chip": "iPhone"
+      },
+      {
+        "k": "worship",
+        "name": "Worship in one place",
+        "faithOnly": true,
+        "line": "Your day, around your prayers.",
+        "b": [
+          "Prayers at their real times, with adhkar after each",
+          "Dhikr counter, Quran pages and a Personal Khatma",
+          "An alarm that follows Fajr every day"
+        ]
+      },
+      {
+        "k": "mindful",
+        "name": "Mindful moments",
+        "generalOnly": true,
+        "line": "A minute to breathe, a line to write.",
+        "b": [
+          "A guided breathing pacer",
+          "A private journal that stays on your phone",
+          "A gentle evening check-in, if you want one"
+        ]
+      },
+      {
+        "k": "together",
+        "name": "With family & friends",
+        "line": "A team, not a race.",
+        "bFaith": [
+          "A family Khatma: each person takes a juz",
+          "Collective dhikr toward one number",
+          "See who has done today. No chat, no feed"
+        ],
+        "bGeneral": [
+          "Shared habits with the people you choose",
+          "Every Day challenges, counted in kept days",
+          "See who has done today. No chat, no feed"
+        ]
+      },
+      {
+        "k": "motivation",
+        "name": "Motivation that forgives",
+        "line": "Streaks that bend, never break you.",
+        "b": [
+          "Excused and paused days never cost a streak",
+          "3D badges with your name engraved",
+          "Progress by week, never red for a miss"
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Yours, and only yours",
+    "tiles": [
+      {
+        "h": "No account to start",
+        "p": "Open the app and begin. No sign-up, no email."
+      },
+      {
+        "h": "Stays on your iPhone",
+        "p": "Your habits live on your phone and in your own private iCloud."
+      },
+      {
+        "h": "Screen Time never leaves",
+        "p": "What you use and for how long stays on the device. Always."
+      }
+    ],
+    "line": "No ads. No tracking. No account needed."
+  },
+  "works": {
+    "title": "Works with",
+    "items": [
+      "Apple Health",
+      "Apple Watch",
+      "Widgets & Lock Screen",
+      "Live Activities"
+    ]
+  },
+  "pricing": {
+    "title": "Free to start. Premium for everything.",
+    "free": "Free forever",
+    "freeItems": [
+      "5 habits (the five prayers count as one)",
+      "Worship basics, always",
+      "One Screen Time rule",
+      "Join any group"
+    ],
+    "premium": "Forge Premium",
+    "premiumItems": [
+      "Unlimited habits and goals",
+      "Widgets, Watch and the Lock Screen timer",
+      "Create groups and challenges",
+      "Progress by month and year"
+    ],
+    "yearly": "Yearly",
+    "lifetime": "Lifetime",
+    "monthly": "Monthly",
+    "trial": "7-day free trial on yearly",
+    "local": "Prices in your local currency in the store.",
+    "foundersNote": "Founders prices until 12 March 2027. Subscribers keep their price."
+  },
+  "made": {
+    "title": "Made by one person",
+    "p": "Forge is built by Belal Hammad, one founder, in English, Arabic and Turkish. No investors, no ads. Just an app that has to be good enough that you keep it."
+  },
+  "final": {
+    "title": "Start with one habit tonight.",
+    "sub": "Leave your email and we'll write once, on launch day."
+  },
+  "waitlist": {
+    "email": "Email",
+    "country": "Country",
+    "lang": "Language",
+    "group": "I want to join a family or friends group",
+    "submit": "Notify me",
+    "privacy": "One email on launch day. Nothing else. Unsubscribe in one tap.",
+    "ok": "Check your inbox to confirm.",
+    "notOpen": "Sign-up opens this week. Until then, write to support@forgeyourhabit.com and we'll add you.",
+    "bad": "Enter an email address like name@example.com."
+  },
+  "android": {
+    "h1": "Forge for Android is coming.",
+    "p": "Habits, prayers, Quit with Ramadan, Progress and groups come first. Screen Time tools stay on iPhone for now.",
+    "chips": [
+      "Habits & quitting",
+      "Prayers & adhkar",
+      "Quran & Ramadan",
+      "Progress",
+      "Groups with family"
+    ],
+    "later": "Coming later on Android: widgets, the Fajr alarm, the journal and Health Connect."
+  },
+  "join": {
+    "invited": "You're invited to join",
+    "aGroup": "a group",
+    "on": "on Forge",
+    "step1": "Get Forge",
+    "step2": "Open the invite",
+    "icloud": "Groups use iCloud, so you'll need to be signed in to iCloud.",
+    "androidTitle": "Forge groups on Android are coming.",
+    "androidP": "Tell your inviter you're on Android. Leave your email and we'll write the day you can join.",
+    "copy": "Copy a message to your inviter",
+    "copied": "Copied. Paste it in your chat.",
+    "message": "I'm on Android, so I can't join our Forge group yet. I've signed up to hear when I can.",
+    "desktop": "Open this link on your phone.",
+    "bad": "This invite link isn't complete. Ask for a new one.",
+    "soon": "Forge is on the App Store from 11 January."
+  },
+  "footer": {
+    "support": "Support",
+    "privacy": "Privacy",
+    "mosque": "Mosque data",
+    "theme": "Theme",
+    "themeSystem": "System",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "motion": "Motion",
+    "motionOn": "On",
+    "motionOff": "Reduced",
+    "rights": "© 2026 Belal Hammad"
+  }
+}

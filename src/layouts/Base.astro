@@ -1,0 +1,116 @@
+---
+import '@fontsource-variable/bricolage-grotesque';
+import '@fontsource-variable/readex-pro';
+import '@fontsource-variable/alexandria';
+import '../styles/global.css';
+import { t, dir, prefix, short, type Lang } from '../lib/i18n';
+import site from '../data/site.json';
+
+interface Props { lang: Lang; title: string; description: string; path: string; noindex?: boolean; minimal?: boolean }
+const { lang, title, description, path, noindex = false, minimal = false } = Astro.props;
+const s = t(lang);
+const p = prefix(lang);
+const langs: Lang[] = ['en', 'ar', 'tr'];
+const url = (l: Lang) => `https://forgeyourhabit.com${prefix(l)}${path}`;
+const getHref = site.iosState === 'waitlist' ? `${p}/#notify` : site.appStoreUrl;
+---
+<!doctype html>
+<html lang={lang} dir={dir(lang)}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{title}</title>
+<meta name="description" content={description}>
+{noindex ? <meta name="robots" content="noindex, nofollow"> : <link rel="canonical" href={url(lang)}>}
+{!noindex && langs.map((l) => <link rel="alternate" hreflang={l} href={url(l)}>)}
+{!noindex && <link rel="alternate" hreflang="x-default" href={url('en')}>}
+<meta name="theme-color" content="#0E0B09">
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:type" content="website">
+<meta property="og:url" content={url(lang)}>
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script is:inline>
+  (function () {
+    var d = document.documentElement, g = function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } };
+    var th = g('forge-theme'); if (th === 'light' || th === 'dark') d.setAttribute('data-theme', th);
+    var mo = g('forge-motion'); if (mo === 'on' || mo === 'off') d.setAttribute('data-motion', mo);
+    else if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) d.setAttribute('data-motion', 'off');
+    var vw = g('forge-view'); d.setAttribute('data-view', vw === 'general' ? 'general' : 'faith');
+  })();
+</script>
+<slot name="head" />
+</head>
+<body>
+<a class="skip" href="#main">{s.nav.skip}</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href={`${p}/`} aria-label="Forge">
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="var(--ember)"/><stop offset="1" stop-color="var(--molten)"/></linearGradient></defs><path d="M16 2c1.6 5.2 8 8.6 8 16a8 8 0 0 1-16 0c0-3.6 1.8-6 3.6-7.6.2 2.6 1.4 4.2 3 4.6C13.4 10.6 14 6 16 2Z" fill="url(#lg)"/></svg>
+      Forge
+    </a>
+    {!minimal && (
+      <nav class="site-nav" aria-label="Forge">
+        <a href={`${p}/#pillars`}>{s.nav.features}</a>
+        <a href={`${p}/#season`} data-only="faith">{s.nav.ramadan}</a>
+        <a href={`${p}/#pricing`}>{s.nav.pricing}</a>
+        <a href={`${p}/android/`}>{s.nav.android}</a>
+      </nav>
+    )}
+    <nav class="lang" aria-label={s.nav.language} style={minimal ? 'margin-inline-start:auto' : ''}>
+      {langs.map((l) => <a href={`${prefix(l)}${path}`} hreflang={l} lang={l} aria-current={l === lang ? 'true' : 'false'}>{short[l]}</a>)}
+    </nav>
+    {!minimal && <a class="btn btn-ember head-cta" href={getHref}>{s.nav.get}</a>}
+  </div>
+</header>
+<main id="main"><slot /></main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div style="display:grid;gap:14px">
+      <div class="foot-links">
+        <a href={lang === 'ar' ? '/support-ar.html' : '/support.html'}>{s.footer.support}</a>
+        <a href={lang === 'ar' ? '/privacy-ar.html' : '/privacy.html'}>{s.footer.privacy}</a>
+        <a href="/mosque-data.html">{s.footer.mosque}</a>
+        <a href={`${p}/android/`}>{s.nav.android}</a>
+        <span dir="ltr">{site.supportEmail}</span>
+      </div>
+      <span>{s.footer.rights}</span>
+    </div>
+    <div class="foot-prefs">
+      <span>{s.footer.theme}</span>
+      <span class="seg" id="theme-seg">
+        <button type="button" data-v="system">{s.footer.themeSystem}</button>
+        <button type="button" data-v="light">{s.footer.themeLight}</button>
+        <button type="button" data-v="dark">{s.footer.themeDark}</button>
+      </span>
+      <span>{s.footer.motion}</span>
+      <span class="seg" id="motion-seg">
+        <button type="button" data-v="on">{s.footer.motionOn}</button>
+        <button type="button" data-v="off">{s.footer.motionOff}</button>
+      </span>
+    </div>
+  </div>
+</footer>
+<script>
+  const d = document.documentElement;
+  const set = (k: string, v: string | null) => { try { v === null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch {} };
+  const paint = () => {
+    const th = d.getAttribute('data-theme') ?? 'system';
+    document.querySelectorAll<HTMLButtonElement>('#theme-seg button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.v === th)));
+    const mo = d.getAttribute('data-motion') ?? 'on';
+    document.querySelectorAll<HTMLButtonElement>('#motion-seg button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.v === mo)));
+  };
+  document.querySelectorAll<HTMLButtonElement>('#theme-seg button').forEach((b) => b.addEventListener('click', () => {
+    const v = b.dataset.v!;
+    if (v === 'system') { d.removeAttribute('data-theme'); set('forge-theme', null); } else { d.setAttribute('data-theme', v); set('forge-theme', v); }
+    paint();
+  }));
+  document.querySelectorAll<HTMLButtonElement>('#motion-seg button').forEach((b) => b.addEventListener('click', () => {
+    d.setAttribute('data-motion', b.dataset.v!); set('forge-motion', b.dataset.v!); paint();
+    document.dispatchEvent(new CustomEvent('forge:motion'));
+  }));
+  paint();
+</script>
+</body>
+</html>
