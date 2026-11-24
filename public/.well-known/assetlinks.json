@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bilalhammad.forge",
+      "sha256_cert_fingerprints": [
+        "F1:9C:A7:E5:B7:7F:55:61:12:D6:FB:16:56:2D:99:32:50:BE:6A:AD:A3:BC:B9:F5:42:7B:5C:30:CD:5B:10:73"
+      ]
+    }
+  }
+]
