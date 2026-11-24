@@ -5,6 +5,7 @@ import '@fontsource-variable/alexandria';
 import '../styles/global.css';
 import { t, dir, prefix, short, type Lang } from '../lib/i18n';
 import site from '../data/site.json';
+import pricing from '../data/pricing.json';
 
 interface Props { lang: Lang; title: string; description: string; path: string; noindex?: boolean; minimal?: boolean }
 const { lang, title, description, path, noindex = false, minimal = false } = Astro.props;
@@ -12,6 +13,20 @@ const s = t(lang);
 const p = prefix(lang);
 const langs: Lang[] = ['en', 'ar', 'tr'];
 const url = (l: Lang) => `https://forgeyourhabit.com${prefix(l)}${path}`;
+const ld = noindex ? null : {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Organization', '@id': 'https://forgeyourhabit.com/#org', name: 'Forge', url: 'https://forgeyourhabit.com/',
+      logo: 'https://forgeyourhabit.com/favicon.svg', email: site.supportEmail },
+    { '@type': 'WebSite', '@id': 'https://forgeyourhabit.com/#site', url: 'https://forgeyourhabit.com/', name: 'Forge',
+      inLanguage: ['en', 'ar', 'tr'], publisher: { '@id': 'https://forgeyourhabit.com/#org' } },
+    { '@type': 'MobileApplication', name: 'Forge', url: url(lang), description,
+      operatingSystem: 'iOS, Android', applicationCategory: 'HealthApplication',
+      inLanguage: ['en', 'ar', 'tr'], publisher: { '@id': 'https://forgeyourhabit.com/#org' },
+      ...(site.appStoreUrl ? { downloadUrl: site.appStoreUrl } : {}),
+      offers: { '@type': 'Offer', price: '0', priceCurrency: pricing.currency } },
+  ],
+};
 const getHref = site.iosState === 'waitlist' ? `${p}/#notify` : site.appStoreUrl;
 ---
 <!doctype html>
@@ -31,6 +46,8 @@ const getHref = site.iosState === 'waitlist' ? `${p}/#notify` : site.appStoreUrl
 <meta property="og:url" content={url(lang)}>
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="sitemap" href="/sitemap.xml">
+{ld && <script type="application/ld+json" set:html={JSON.stringify(ld)} />}
 <script is:inline>
   (function () {
     var d = document.documentElement, g = function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } };

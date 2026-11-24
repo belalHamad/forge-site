@@ -1,0 +1,25 @@
+# Forge
+
+> Forge is a habit app for building good habits and breaking bad ones, made Muslim-first: prayers, Quran, dhikr,
+> Ramadan and Fajr sit next to screen time limits, quitting smoking or vaping, journaling, focus timers and everyday
+> habits, with friends and family in groups. It also has a General mode without worship features.
+> Available in English, Arabic and Turkish. iPhone launches 11 January 2027; Android and iPhone↔Android groups follow
+> on 1 February 2027, before Ramadan.
+
+## Key facts
+- Platforms: iPhone (iOS 26+, Apple Watch, widgets, Live Activities); Android from 1 February 2027.
+- Pricing: free for up to 5 habits; Premium monthly, yearly or lifetime with a 7-day trial; founders' prices until 12 March 2027.
+- Privacy: habits stay on the phone and the person's own iCloud; no ads; Screen Time and Health data never leave the phone.
+- Faith features: five daily prayers with times, Wake for Fajr alarm, Quran reading and Team Khatma, dhikr counters,
+  Ramadan and Hijri-season habits, Guard Your Gaze, Guard Your Tongue.
+- Break habits: Less Social Media / Video / Gaming / One App plans, Block Apps, Phone Down at Bedtime, Quit Smoking/Vaping
+  with money-saved counter and urge help.
+- Groups: shared habits, Team Khatma, collective dhikr; works between iPhone and Android.
+
+## Pages
+- [Home (English)](https://forgeyourhabit.com/)
+- [الصفحة الرئيسية (العربية)](https://forgeyourhabit.com/ar/)
+- [Ana sayfa (Türkçe)](https://forgeyourhabit.com/tr/)
+- [Android](https://forgeyourhabit.com/android/)
+- [Privacy policy](https://forgeyourhabit.com/privacy.html)
+- [Support](https://forgeyourhabit.com/support.html)
