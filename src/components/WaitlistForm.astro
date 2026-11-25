@@ -14,7 +14,7 @@ const action = site.waitlistAction;
   </div>
   <label class="wl-check" for={`${id}-group`}><input id={`${id}-group`} name="fields[group]" type="checkbox" value="yes"> {s.group}</label>
   <input type="hidden" name="fields[language]" value={lang}>
-  <input type="hidden" name="fields[source]" value={source}>
+  <input type="hidden" name="fields[signup_source]" value={source}>
   <div class="hp" aria-hidden="true"><label for={`${id}-hp`}>Leave empty</label><input id={`${id}-hp`} name="hp" tabindex="-1" autocomplete="off"></div>
   <p class="wl-note">{s.privacy}</p>
   <p class="wl-msg" role="status" aria-live="polite"></p>
