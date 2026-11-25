@@ -105,6 +105,9 @@ section { padding-block: clamp(72px, 10vw, 128px); }
 .foot-links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
 .foot-links a { text-decoration: none; }
 .foot-links a:hover { color: var(--text); }
+.foot-social { display: flex; flex-wrap: wrap; gap: 8px 18px; font-weight: 600; }
+.foot-social a { text-decoration: none; color: var(--text); }
+.foot-social a:hover { color: var(--ember, var(--text)); }
 .foot-prefs { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; }
 .seg button { font: inherit; font-size: 13px; color: var(--text-2); background: none; border: 0; padding: 6px 12px; border-radius: 999px; cursor: pointer; min-height: 32px; }

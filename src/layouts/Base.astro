@@ -17,7 +17,8 @@ const ld = noindex ? null : {
   '@context': 'https://schema.org',
   '@graph': [
     { '@type': 'Organization', '@id': 'https://forgeyourhabit.com/#org', name: 'Forge', url: 'https://forgeyourhabit.com/',
-      logo: 'https://forgeyourhabit.com/favicon.svg', email: site.supportEmail },
+      logo: 'https://forgeyourhabit.com/favicon.svg', email: site.supportEmail,
+      sameAs: site.social.map((x) => x.url) },
     { '@type': 'WebSite', '@id': 'https://forgeyourhabit.com/#site', url: 'https://forgeyourhabit.com/', name: 'Forge',
       inLanguage: ['en', 'ar', 'tr'], publisher: { '@id': 'https://forgeyourhabit.com/#org' } },
     { '@type': 'MobileApplication', name: 'Forge', url: url(lang), description,
@@ -91,6 +92,9 @@ const getHref = site.iosState === 'waitlist' ? `${p}/#notify` : site.appStoreUrl
         <a href="/mosque-data.html">{s.footer.mosque}</a>
         <a href={`${p}/android/`}>{s.nav.android}</a>
         <span dir="ltr">{site.supportEmail}</span>
+      </div>
+      <div class="foot-social" dir="ltr">
+        {site.social.map((x) => <a href={x.url} rel="me noopener" target="_blank">{x.name}</a>)}
       </div>
       <span>{s.footer.rights}</span>
     </div>

@@ -13,5 +13,27 @@
   "waitlistAction": "",
   "supportEmail": "support@forgeyourhabit.com",
   "ramadanStart": "2027-02-08",
-  "launchDate": "2027-01-11"
+  "launchDate": "2027-01-11",
+  "social": [
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/forge.habits/"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://www.tiktok.com/@forge.habits.app"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/Forge_habit_app"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/@Forge_Habits_App"
+    },
+    {
+      "name": "Snapchat",
+      "url": "https://www.snapchat.com/add/forge.app"
+    }
+  ]
 }
